@@ -53,6 +53,6 @@ print(waypoints)
 
 
 # Write a loop that prints out all the field values for all the waypoints
-# YOUR CODE HERE
-print([value for a in waypoints for key, value in a.items() ])
+# YOUR CODE HERE.
+print([value for a in waypoints for key, value in a.items()])
 
