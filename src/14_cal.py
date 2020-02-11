@@ -59,7 +59,7 @@ elif (value == 2):
 
 
 def calFun(month = month, year = year):
-    cal = calendar.TextCalendar(calendar.MONDAY)
+    cal = calendar.TextCalendar(calendar.SUNDAY)
     printer = cal.formatmonth(year, month)
     print(printer)
 
