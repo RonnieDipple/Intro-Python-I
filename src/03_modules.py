@@ -8,7 +8,7 @@ level operating system functionality.
 import sys
 # See docs for the sys module: https://docs.python.org/3.7/library/sys.html
 
-# Print out the command line arguments in sys.argv, one per line:
+# Print out the command line value in sys.argv, one per line:
 # YOUR CODE HERE
 
 # Print out the OS platform you're using:

@@ -1,7 +1,7 @@
-# Experiment with positional arguments, arbitrary arguments, and keyword
-# arguments.
+# Experiment with positional value, arbitrary value, and keyword
+# value.
 
-# Write a function f1 that takes two integer positional arguments and returns
+# Write a function f1 that takes two integer positional value and returns
 # the sum. This is what you'd consider to be a regular, normal function.
 
 # YOUR CODE HERE
@@ -12,9 +12,9 @@ def f1(a, b):
 print(f1(1, 2))
 
 
-# Write a function f2 that takes any number of integer arguments and prints the
+# Write a function f2 that takes any number of integer value and prints the
 # sum.
-# Note: Google for "python arbitrary arguments" and look for "*args"
+# Note: Google for "python arbitrary value" and look for "*args"
 
 # YOUR CODE HERE
 def f2(*nums):
@@ -35,10 +35,10 @@ a = [7, 6, 5, 4]
 print(f2(a[0], a[1], a[2], a[3]))  # Should print 22
 
 
-# Write a function f3 that accepts either one or two arguments. If one argument,
-# it returns that value plus 1. If two arguments, it returns the sum of the
-# arguments.
-# Note: Google "python default arguments" for a hint.
+# Write a function f3 that accepts either one or two value. If one argument,
+# it returns that value plus 1. If two value, it returns the sum of the
+# value.
+# Note: Google "python default value" for a hint.
 
 # YOUR CODE HERE
 def f3(num1, num2=1):
@@ -49,13 +49,13 @@ print(f3(1, 2))  # Should print 3
 print(f3(8))  # Should print 9
 
 
-# Write a function f4 that accepts an arbitrary number of keyword arguments and
+# Write a function f4 that accepts an arbitrary number of keyword value and
 # prints out the keys and values like so:
 #
 # key: foo, value: bar
 # key: baz, value: 12
 #
-# Note: Google "python keyword arguments".
+# Note: Google "python keyword value".
 
 # YOUR CODE HERE
 def f4(**kwargs):

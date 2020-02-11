@@ -11,11 +11,11 @@ and does the following:
    module may be helpful for this.
  - If the user specifies one argument, assume they passed in a
    month and render the calendar for that month of the current year.
- - If the user specifies two arguments, assume they passed in
+ - If the user specifies two value, assume they passed in
    both the month and the year. Render the calendar for that
    month and year.
  - Otherwise, print a usage statement to the terminal indicating
-   the format that your program expects arguments to be given.
+   the format that your program expects value to be given.
    Then exit the program.
 
 Note: the user should provide argument input (in the initial call to run the file) and not 
@@ -32,39 +32,35 @@ import calendar
 from datetime import datetime
 import logging
 
-currentMonth = datetime.today().month
-currentYear = datetime.today().year
-cal = calendar.TextCalendar(calendar.SUNDAY)
-
-userInput = input()
-
-def monthYearInputDate(userMonth, userYear):return cal.formatmonth(userYear, userMonth) + cal.formatyear(userYear, userMonth)
 
 
-def noInputDate():return cal.formatmonth(currentYear, currentMonth)
+value = len(sys.argv) - 1
 
-def monthInputDate(userMonth=userInput.isnumeric()):return cal.formatmonth(currentYear, userMonth)
+date = datetime.now()
+month = date.month
+year = date.year
 
-if len(userInput) == 0:
-    print(noInputDate())
+if (value == 0):
+    print("No number submitted presenting system Month")
 
-elif 13 > int(userInput) > 0 and len(userInput)<3 :
-    x = int(userInput)
-    print(monthInputDate(x))
+if (value==1):
+    if(sys.argv[1].isnumeric()):
 
+        month = sys.argv[1]
+    else:
+        print("must submit an integer value, please submit a months integer value") #need to handle error if 01,02,03 supplied currently does not handle that
+elif (value == 2):
+    if(sys.argv[2].isnumeric() & sys.argv[1].isnumeric()):
 
-elif int(len(userInput))> 3 :
-    m, y = userInput.split(',')
-    m, y = int(m), int(y)
-    print(monthYearInputDate(m, y))
-
-else:
-    print("Please input a month or year as a number")
-
-
-
-
-
+        month = sys.argv[1]
+        year = sys.argv[2]
+    else:
+        print("must submit an integer value, please submit a months integer value and four digit year")#need to handle error if 01,02,03 supplied currently does not handle that
 
 
+def calFun(month = month, year = year):
+    cal = calendar.TextCalendar(calendar.MONDAY)
+    printer = cal.formatmonth(year, month)
+    print(printer)
 
+calFun(int(month))
